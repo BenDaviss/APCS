@@ -1,0 +1,63 @@
+package general;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import components.FileChooserDemo;
+
+public class FileHandler extends JFrame implements ActionListener {
+
+	private static final long serialVersionUID = 1L;
+	
+	JFileChooser fc;
+
+	public FileHandler() {
+		JPanel buttonPanel = new JPanel();
+		JButton open = new JButton("Open");
+		open.setActionCommand("Open");
+		JButton save = new JButton("Save");
+		save.setActionCommand("Save");
+		buttonPanel.add(open);
+		buttonPanel.add(save);
+		
+		setSize(200, 65);
+		setResizable(false);
+		setVisible(true);
+		setLocationRelativeTo(null);
+		add(buttonPanel);
+		
+		fc = new JFileChooser();
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		String command = e.getActionCommand();
+		
+		if (command.equals("Open")) {
+			int returnVal = fc.showOpenDialog(FileHandler.this);
+			
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+                File file = fc.getSelectedFile();
+                System.out.println("Saved");
+            } else {
+                System.out.println("Something went wrong");
+            }
+		}
+		
+		else if (command.equals("Save")) {
+			int returnVal = fc.showOpenDialog(FileHandler.this);
+			
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+                File file = fc.getSelectedFile();
+                System.out.println("Saved");
+            } else {
+                System.out.println("Something went wrong");
+            }
+		}
+	}
+}

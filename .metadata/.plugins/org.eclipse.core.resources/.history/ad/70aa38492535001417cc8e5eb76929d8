@@ -1,0 +1,14 @@
+package general;
+
+public class Run
+{
+
+	public static Layout frame;
+
+	//this class just tethers all the classes together and runs them using the main method
+	public static void main(String[] args)
+	{
+		frame = new Layout();
+	}
+
+}

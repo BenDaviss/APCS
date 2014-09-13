@@ -1,0 +1,29 @@
+package general;
+
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
+public class InsertPhoto extends JOptionPane
+{
+
+	public InsertPhoto()
+	{
+		String filePath = showInputDialog(null,
+				"Enter the file path to the photo here: ", "File Path Input",	//the 4 parameter showInputDialog method is used
+																				//to give a title to the dialog box and select
+																				//the style of message
+				JOptionPane.PLAIN_MESSAGE);
+		icon = new ImageIcon(filePath);
+	}
+
+	public void insertPhotoInJTextPane()
+	{
+		TextArea.textPane.insertIcon(icon);										//displaying an image in the textPane is very easy..
+																				//the image icon is inserted at the predetermined
+																				//dimension at the caret position
+	}
+	
+private static final long serialVersionUID = 1L;
+
+ImageIcon icon;
+}

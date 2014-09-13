@@ -1,0 +1,11 @@
+package general;
+
+public class Run {
+	
+	public static Layout frame;
+	
+	public static void main(String[] args) {
+		frame = new Layout();
+	}
+	
+}

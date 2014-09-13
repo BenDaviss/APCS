@@ -1,0 +1,21 @@
+package general;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+public class FileHandler extends JFrame {
+	
+	public FileHandler() {
+		JButton open = new JButton("Open");
+		JButton save = new JButton("Save");
+		
+		setSize(200, 200);
+		setResizable(false);
+		setVisible(true);
+		setLocationRelativeTo(null);
+		add(open, BorderLayout.CENTER);
+		add(save, BorderLayout.CENTER);
+	}
+}

@@ -1,0 +1,26 @@
+package general;
+
+import java.awt.Dimension;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class FileHandler extends JFrame {
+	
+	public FileHandler() {
+		JPanel buttonPanel = new JPanel();
+		JButton open = new JButton("Open");
+		open.setSelected(false);
+		JButton save = new JButton("Save");
+		save.setSelected(false);
+		buttonPanel.add(open);
+		buttonPanel.add(save);
+		
+		setSize(200, 100);
+		setResizable(false);
+		setVisible(true);
+		setLocationRelativeTo(null);
+		add(buttonPanel);
+	}
+}

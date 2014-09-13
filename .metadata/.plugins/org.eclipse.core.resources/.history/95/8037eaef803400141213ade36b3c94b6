@@ -1,0 +1,18 @@
+package general;
+
+import java.awt.Font;
+
+public class ChangeTextMethod
+{
+
+	public ChangeTextMethod()
+	{
+
+	}
+
+	public void changeFont()
+	{
+		TextArea.textPane.setFont(new Font(Menu.fontStyle,
+				Menu.boldItalicState, Menu.fontSize));
+	}
+}

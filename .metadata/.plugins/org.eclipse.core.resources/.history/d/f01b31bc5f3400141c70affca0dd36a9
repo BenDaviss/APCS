@@ -1,0 +1,28 @@
+package components;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.Scanner;
+
+public class Scannerer
+{
+	Scanner s;
+	public Scannerer() {
+		try {
+            s = new Scanner(new BufferedReader(new FileReader("test.txt")));
+
+            while (s.hasNext()) {
+                System.out.println(s.next());
+            }
+        } catch (FileNotFoundException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+            if (s != null) {
+                s.close();
+            }
+        }
+	}
+}

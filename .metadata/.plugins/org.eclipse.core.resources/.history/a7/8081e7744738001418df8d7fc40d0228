@@ -1,0 +1,42 @@
+package general;
+
+import java.io.File;
+import java.util.Scanner;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+
+public class InsertPhoto
+{
+
+	public InsertPhoto()
+	{
+		fc = new JFileChooser();
+		
+		int returnVal = fc.showOpenDialog(InsertPhoto.this);
+
+		if (returnVal == JFileChooser.APPROVE_OPTION)
+		{
+			File file = fc.getSelectedFile();
+
+	        String filePath = file.getPath();
+		
+		icon = new ImageIcon(filePath);
+		}
+		else 
+		{
+			System.out.println("Something went wrong");
+		}
+	}
+
+	public void insertPhotoInJTextPane()
+	{
+		TextArea.textPane.insertIcon(icon);										//displaying an image in the textPane is very easy..
+																				//the image icon is inserted at the predetermined
+																				//dimension at the caret position
+	}
+
+JFileChooser fc;
+ImageIcon icon;
+}

@@ -1,0 +1,25 @@
+package general;
+
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
+public class InsertPhoto extends JOptionPane
+{
+
+	public InsertPhoto()
+	{
+		String filePath = showInputDialog(null,
+				"Enter the file path to the photo here: ", "File Path Input",
+				JOptionPane.PLAIN_MESSAGE);
+		icon = new ImageIcon(filePath);
+	}
+
+	public void insertPhotoInJTextPane()
+	{
+		TextArea.textPane.insertIcon(icon);
+	}
+	
+private static final long serialVersionUID = 1L;
+
+ImageIcon icon;
+}
